@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'is_admin: ADMIN']], function () {
+    Route::get('/', [HomeController::class, 'index']);
+    
+    Route::resource('/product', ProductController::class);
 });
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth:sanctum', 'verified', 'is_admin'])
+    ->get('/admin', [HomeController::class, 'index'])->name('admin');
