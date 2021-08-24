@@ -1,4 +1,4 @@
-@extends('Admin.app')
+@extends('admin.app')
 
 @section('content')
     <div class="content-wrapper">
@@ -15,7 +15,7 @@
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Pendapatan</span>
                                 <span class="info-box-number">
-                                    Rp. {{$pesanandetail->sum('jumlah_harga')}}
+                                    Rp. {{ $pesanandetail->sum('jumlah_harga') }}
                                 </span>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Member Baru</span>
-                                <span class="info-box-number">{{$user->count()}} User</span>
+                                <span class="info-box-number">{{ $user->count() }} User</span>
                             </div>
                         </div>
                     </a>
@@ -44,7 +44,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Produk</span>
-                                <span class="info-box-number">{{$pesanandetail->count()}} Product</span>
+                                <span class="info-box-number">{{ $pesanandetail->count() }} Product</span>
                             </div>
                         </div>
                     </a>
@@ -57,7 +57,7 @@
                             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Pesanan</span>
-                                <span class="info-box-number">{{$pesanan->count()}} Pesanan</span>
+                                <span class="info-box-number">{{ $pesanan->count() }} Pesanan</span>
                             </div>
                         </div>
                     </a>
@@ -81,33 +81,33 @@
                         <div class="card-body p-0">
                             <table class="table table-striped table-valign-middle">
                                 <thead>
-                                     <tr>
-                                                <th>NO</th>
-                                                <th>Gambar Produk</th>
-                                                <th>Nama Produk</th>
-                                                <th>Stock</th>
-                                                <th>Harga Produk</th>
-                                                <th>Harga Total Penjualan</th>
-                                                <th>Jumlah Pesanan</th>
-                                            </tr>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>Gambar Produk</th>
+                                        <th>Nama Produk</th>
+                                        <th>Stock</th>
+                                        <th>Harga Produk</th>
+                                        <th>Harga Total Penjualan</th>
+                                        <th>Jumlah Pesanan</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                  <tbody>
-                                            @foreach ($pesanandetail as $no=>$item)
-                                            <tr>
-                                                <td>{{$no+1}}</td>
-                                                <td><img src="{{ Storage::url('images') }}/{{ $item->product->gambar_barang }}"
-                                                        width="120px" height="120px" />
-                                                </td>
-                                                <td>{{$item->product->nama_barang}}</td>
-                                                <td>{{$item->jumlah_pesanan}}</td>
-                                                <td>Rp. {{number_format($item->product->harga_barang)}}
-                                                </td>
-                                                <td>Rp. {{number_format($item->jumlah_harga)}}</td>
-                                                <td>{{$no+1}}</td>
-                                            </tr>
-                                            @endforeach
-                                        <tbody>
+                                <tbody>
+                                    @foreach ($pesanandetail as $no => $item)
+                                        <tr>
+                                            <td>{{ $no + 1 }}</td>
+                                            <td><img src="{{ Storage::url('images') }}/{{ $item->product->gambar_barang }}"
+                                                    width="120px" height="120px" />
+                                            </td>
+                                            <td>{{ $item->product->nama_barang }}</td>
+                                            <td>{{ $item->jumlah_pesanan }}</td>
+                                            <td>Rp. {{ number_format($item->product->harga_barang) }}
+                                            </td>
+                                            <td>Rp. {{ number_format($item->jumlah_harga) }}</td>
+                                            <td>{{ $no + 1 }}</td>
+                                        </tr>
+                                    @endforeach
+                                <tbody>
                                 </tbody>
                             </table>
                         </div>

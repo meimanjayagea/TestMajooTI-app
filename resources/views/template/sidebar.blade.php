@@ -55,7 +55,7 @@
 
                 <!--Transaksi-->
                 <li class="nav-item">
-                    <a href="{{url('/admin/order')}}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-shopping-cart"></i>
                         <p>List Order</p>
                     </a>
