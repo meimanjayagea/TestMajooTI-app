@@ -9,7 +9,7 @@ use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-class PesananController extends Controller
+class PesanController extends Controller
 {
     
    public function __construct()

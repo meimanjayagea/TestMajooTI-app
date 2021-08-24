@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-       $product = [
+        $product = [
             [
                 'gambar_barang' => 'standard_repo.png',
                 'nama_barang' => 'Majo Pro',
