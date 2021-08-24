@@ -7,9 +7,11 @@
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
+                    <div class="card-header">
+                     <p class="card-title">List Product</p>
+                    </div>
                     <div class="card-body">
-                        <p class="card-title">List Product</p>
-                        <a href="{{ url('admin/product/create') }}" class="btn btn-sm btn-primary mb-2"><i
+                        <a href="{{url('admin/product/create') }}" class="btn btn-sm btn-primary mb-2"><i
                                 class="fas fa-plus"></i> Tambah Produk</a>
                         <div class="row">
                             <div class="col-12">

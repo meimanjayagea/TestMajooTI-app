@@ -1,14 +1,15 @@
 @extends('Admin.app')
 
 @section('content')
-@include('Admin.sidebar')
-<div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-header">
                         <p class="card-title">+ Tambah Produk</p>
+                    </div>
+                    <div class="card-body">
+                        
                         <div class="row">
                             <div class="col-12">
                                 <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
@@ -78,7 +79,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 @endsection

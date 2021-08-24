@@ -1,91 +1,87 @@
-@extends('Admin.app')
+@extends('admin.app')
 
 @section('content')
-@include('Admin.sidebar')
-<div class="main-panel">
     <div class="content-wrapper">
-        <div class="row">
-            <div class="col-md-12 grid-margin">
-                <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                        <h3 class="font-weight-bold">Welcome {{ Auth::user()->name }}</h3>
-                        <h6 class="font-weight-normal mb-0">Admin / <b>Dashboard </b></h6>
-                    </div>
-                    <div class="col-12 col-xl-4">
-                        <div class="justify-content-end d-flex">
-                            <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                                <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button"
-                                    id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="true">
-                                    <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                                    <a class="dropdown-item" href="#">January - March</a>
-                                    <a class="dropdown-item" href="#">March - June</a>
-                                    <a class="dropdown-item" href="#">June - August</a>
-                                    <a class="dropdown-item" href="#">August - November</a>
-                                </div>
+        <!-- Main content -->
+        <section class="content">
+            <!-- Default box -->
+            <div class="row">
+                <!-- /.Pendapatan -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="" class="text-decoration-none text-body">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Pendapatan</span>
+                                <span class="info-box-number">
+                                    Rp. {{$pesanandetail->sum('jumlah_harga')}}
+                                </span>
                             </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                <!-- /.User -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="" class="text-decoration-none text-body">
+                        <div class="info-box mb-3">
+
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Member Baru</span>
+                                <span class="info-box-number">{{$user->count()}} User</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- /.Product -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="" class="text-decoration-none text-body">
+                        <div class="info-box mb-3">
+
+                            <span class="info-box-icon card-dark elevation-1"><i class="fas fa-box-open"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Produk</span>
+                                <span class="info-box-number">{{$pesanandetail->count()}} Product</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- /.Penjualan -->
+                <div class="clearfix hidden-md-up"></div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <a href="" class="text-decoration-none text-body">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Pesanan</span>
+                                <span class="info-box-number">{{$pesanan->count()}} Pesanan</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 grid-margin transparent">
-                <div class="row">
-                    <div class="col-md-6 mb-4 stretch-card transparent">
-                        <div class="card card-tale">
-                            <div class="card-body">
-                                <p class="mb-4">Total Pendapatan</p>
-                                <p class="fs-30 mb-2">Rp. {{$pesanandetail->sum('jumlah_harga')}}</p>
-                                <p>24.00% (30 days)</p>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header border-0 bg-dark">
+                            <h3 class="card-title">Penjualan Product</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-tool btn-sm">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="btn btn-tool btn-sm">
+                                    <i class="fas fa-bars"></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-4 stretch-card transparent">
-                        <div class="card card-dark-blue">
-                            <div class="card-body">
-                                <p class="mb-4">Total Penjualan</p>
-                                <p class="fs-30 mb-2">{{$pesanandetail->count()}} Product</p>
-                                <p>22.00% (30 days)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                        <div class="card card-light-blue">
-                            <div class="card-body">
-                                <p class="mb-4">Total User</p>
-                                <p class="fs-30 mb-2">{{$user->count()}} User</p>
-                                <p>2.00% (30 days)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 stretch-card transparent">
-                        <div class="card card-light-danger">
-                            <div class="card-body">
-                                <p class="mb-4">Total Pesanan Tertunda</p>
-                                <p class="fs-30 mb-2">{{$pesanan->count()}} Pesanan</p>
-                                <p>0.22% (30 days)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title">Monitoring Orderan</p>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table-responsive">
-                                    <table class="display expandable-table" style="width:100%">
-                                        <thead>
-                                            <tr>
+                        <div class="card-body p-0">
+                            <table class="table table-striped table-valign-middle">
+                                <thead>
+                                     <tr>
                                                 <th>NO</th>
                                                 <th>Gambar Produk</th>
                                                 <th>Nama Produk</th>
@@ -94,8 +90,9 @@
                                                 <th>Harga Total Penjualan</th>
                                                 <th>Jumlah Pesanan</th>
                                             </tr>
-                                        </thead>
-                                        <tbody>
+                                </thead>
+                                <tbody>
+                                  <tbody>
                                             @foreach ($pesanandetail as $no=>$item)
                                             <tr>
                                                 <td>{{$no+1}}</td>
@@ -111,20 +108,21 @@
                                             </tr>
                                             @endforeach
                                         <tbody>
-                                    </table>
-                                    
-                                </div>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                    <!-- /.card -->
                 </div>
+
             </div>
-        </div>
+
+            <div class="card-footer">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </section>
+        <!-- /.content -->
     </div>
-    <!-- content-wrapper ends -->
-
-</div>
-<!-- main-panel ends -->
-
 
 @endsection

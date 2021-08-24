@@ -2,59 +2,94 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ config('app.name', 'Majoo Teknologi Indonesia') }}</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
-    <!-- endinject -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/js/select.dataTables.min.css')}}">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Theme style -->
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
+
+ <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/jqvmap/jqvmap.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{asset('assets/plugins/summernote/summernote-bs4.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Bootstrab 4.6-->
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap-reboot.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/bootstrap-reboot.min.css')}}">
 </head>
 
 <body>
-    <div class="container-scroller">
-        @include('template.navbar')
-        <div class="container-fluid page-body-wrapper">
-            @yield('content')
-        </div>
-            @include('template.footer')
-<!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    @stack('scrips')
-    <!-- plugins:js -->
-    <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="{{asset('assets/vendors/chart.js/Chart.min.js')}}"></script>
-    <script src="{{asset('assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
-    <script src="{{asset('assets/js/dataTables.select.min.js')}}"></script>
+  <!--Content-->
+  @include('template.navbar');
+  @include('template.sidebar');
+  @yield('content');
 
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="{{asset('assets/js/off-canvas.js')}}"></script>
-    <script src="{{asset('assets/js/hoverable-collapse.js')}}"></script>
-    <script src="{{asset('assets/js/template.js')}}"></script>
-    <script src="{{asset('assets/js/settings.js')}}"></script>
-    <script src="{{asset('assets/js/todolist.js')}}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{{asset('assets/js/dashboard.js')}}"></script>
-    <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
-    <!-- End custom js for this page-->
+  <!--Content-->
+
+
+  <!-- jQuery -->
+  <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+  <!-- Bootstrap 4 -->
+  <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <!-- AdminLTE App -->
+  <script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="{{asset('assets/dist/js/demo.js')}}"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(document).on('change', '#foto_profile', function() {
+        let ft = $('#foto_profile').val()
+        $('.custom-file-label').text(foto_profile)
+      })
+    });
+  </script>
+
+  <!-- JS Bootstrap 4.6 -->
+  <script src="{{asset('assets/js/bootstrap.bundle.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap.min.js.map')}}"></script>
+
+  <!-- OPTIONAL SCRIPTS -->
+<script src="{{asset('assets/plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('assets/dist/js/demo.js')}}"></script>
+<script src="{{asset('assets/dist/js/pages/dashboard3.js')}}"></script>
+
+ <!-- daterangepicker -->
+<script src="{{asset('assets/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{asset('assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<!-- Summernote -->
+<script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+
+@stack('scrips')
+
 </body>
 
 </html>
