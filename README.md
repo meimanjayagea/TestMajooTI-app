@@ -1,9 +1,11 @@
 # langkah langkah menjalankan App Majoo
 1. clone repository github ->>>> git clone "url"
 2. copy file .env.example
-3. generate key ->>>>  php artisan key:generate4. buat database di phpmyadmin dengan namadata base "majootest"
+3. generate key ->>>>  php artisan key:generate
+4. buat database di phpmyadmin dengan namadata base "majootest"
 5. ketik ->>> php artisan migrate:fresh --seed
-6. ketik di CLI  ->>>> php artisan storage:link7. download storage lalu extract storage : https://drive.google.com/file/d/1mtXBmQ-mnA8j5yzMQ3pVuZK6hjrwVvmL/view?usp=sharing
+6. ketik di CLI  ->>>> php artisan storage:link
+7. download storage lalu extract storage : https://drive.google.com/file/d/1mtXBmQ-mnA8j5yzMQ3pVuZK6hjrwVvmL/view?usp=sharing
 8. pindahkan file assets dan images ke dalam "public/storage/  "
 9. lalu bisa di jalankan dengan ->>>> php artisan serve
 
